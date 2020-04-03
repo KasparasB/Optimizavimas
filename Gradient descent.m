@@ -3,7 +3,7 @@ grad0 = @(X1, X2) [2 * X1 * X2 + X2 .^ 2 - X2, X1 ^ 2 + 2 * X1 * X2 - X1];
 
 X_0 = [0, 0];
 X_1 = [1, 1];
-X_m= [0/10, 5/ 10];
+X_m= [1/10, 6/10];
 
 X0 = X_1;
 
@@ -13,7 +13,7 @@ surf(x1, x2, y);
 title(['Funkcijos grafikas']);
 
 learn_rate = 0.3; 
-eps = 10 ^ (- 5);
+eps = 10 ^ (-5);
 n = 1;
 
 format long

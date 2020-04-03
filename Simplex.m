@@ -4,6 +4,8 @@ hold on;
 f = @(X) (1 / 8) * ((X(1) .^ 2) .* X(2) + X(1) .* (X(2) .^ 2) - X(1) .* X(2)); #funkcija naudojimui
 f1 = @(x1, x2) (1 / 8) * ((x1 .^ 2) .* x2 + x1 .* (x2 .^ 2) - x1 .* x2); #funkcija braizymui
 
+
+
 X_0 = [0, 0];
 X_1 = [1, 1];
 X_m = [0 / 10, 5/ 10]; #a = 0; b = 5;
@@ -62,6 +64,9 @@ format short;
 
 while 1
     [out,idx] = sort(Y);
+   
+    #disp(idx);
+    #disp(out);
     
     %Didziausia reiksme
     Yh = Y(idx(3));
@@ -81,6 +86,9 @@ while 1
  
     Xnew = Xh + (1 + teta) * (Xc - Xh);
     Ynew= f(Xnew);
+    
+    disp(Xnew);
+    
     i = i + 1;
     
     
@@ -159,6 +167,7 @@ while 1
     hold on;
     plot3(X(:, 1), X(:, 2), Y+0.001,'ro'); # Burbuliukai
     hold on;
+    teta = 1;
 endwhile
 
 fprintf('Ciklu kiekis: %f', n);
